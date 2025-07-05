@@ -23,5 +23,10 @@
     <% end %>
   </div>
 </div>
+<% if user_signed_in? %>
+  <%= link_to "プロフィール画面へ", new_profile_path %>
+  <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete} %>
+<% else %>
   <%= link_to "ログイン画面", user_session_path %>
   <%= link_to "ユーザー登録画面",  new_user_registration_path %>
+<% end %>
