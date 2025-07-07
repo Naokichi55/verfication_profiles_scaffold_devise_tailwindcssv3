@@ -1,0 +1,13 @@
+<h1>プロフィール確認</h1>
+<div class="text-2xl">
+  <%= current_user.name %>
+</div>
+<div>
+  <%= @profile.racket %>
+	<%= @profile.history %>
+	<%= @profile.play_style %>
+  <%= @profile.level %>
+  <%= @profile.gender %>
+	<%= @profile.body %>
+</div>
+<%= link_to 'トップページへ', rackets_path %>

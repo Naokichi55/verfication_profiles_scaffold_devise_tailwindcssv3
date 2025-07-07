@@ -1,0 +1,23 @@
+<h1>テスト</h1>
+<div class="text-2xl">
+  <%= current_user.name %>
+</div>
+<div>
+ <%= form_with model: @profile, class: "new_profile" do |f|  %>
+  <%= f.label :愛用ラケット %>
+    <%= f.text_field :racket %>
+  <%= f.label :テニス歴 %>
+    <%= f.text_field :history %>
+  <%= f.label :プレースタイル %>
+    <%= f.text_field :play_style %>
+  <%= f.label :レベル %>
+    <%= f.text_field :generation  %>
+  <%= f.label :性別 %>
+    <%= f.text_field :gender %>
+  <%= f.label :その他 %>
+    <%= f.text_field :body %>
+ <%= f.submit :投稿 %>
+</div>
+<% end %>
+<%= link_to 'プロフィール画面', profiles_path %>
+
