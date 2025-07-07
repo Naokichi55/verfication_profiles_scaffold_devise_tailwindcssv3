@@ -3,22 +3,22 @@ class ProfilesController < ApplicationController
 		@profile = Profile.new
 	end
 
-  # def index
-  #    profile = Profile.all
-  # end
+  def index
+    @profile = Profile.all
+  end
 
   def create
-    @profile = current_user.profile.build(profile_params)
+    @profile = current_user.build_profile(profile_params)
 		if @profile.save
-      redirect_to profile_path, status: :unprocessable_entity
+      redirect_to profiles_path
 		else
-			flash new[:danger] = "プロフィールの作成に失敗しました"
-			render  :new, status
+			flash.now[:danger] = "プロフィールの作成に失敗しました"
+			render  :new, status: :unprocessable_entity
 		end
   end
 
 	private
   def profile_params
-		params.require(:racket).permit(:racket, :history, :play_style, :level, :gender)
+		params.require(:profile).permit(:racket, :history, :play_style, :level, :gender, :body)
   end
 end
