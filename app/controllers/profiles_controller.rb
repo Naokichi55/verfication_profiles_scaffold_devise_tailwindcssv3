@@ -3,8 +3,8 @@ class ProfilesController < ApplicationController
 		@profile = Profile.new
 	end
 
-  def index
-    @profile = Profile.all
+  def show
+    @profile = Profile.find(params[:id])
   end
 
   def create

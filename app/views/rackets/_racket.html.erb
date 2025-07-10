@@ -1,6 +1,7 @@
 <div id="<%= dom_id racket %>">
   <p class="my-5">
     <strong class="block font-medium mb-1">Title:</strong>
+    <%= link_to 'racket.user.name', profile_path(racket.user.profile) %>
     <%= racket.title %>
   </p>
 </div>
