@@ -65,6 +65,6 @@ class RacketsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def racket_params
-      params.require(:racket).permit(:title)
+      params.require(:racket).permit(:title).merge(user_id:current_user.id)
     end
 end
